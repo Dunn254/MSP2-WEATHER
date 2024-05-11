@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const signupController = require('./controllers/registerController');
+const registerController = require('./controllers/registerController');
 
 dotenv.config();
 
@@ -27,6 +27,26 @@ app.use(express.json());
 
 // Signup route
 app.post('/signup', registerController.signup);
+
+// Login route
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const user = await loginUser(username, password);
+
+        if (user) {
+            // Authentication successful
+            res.status(200).json({ message: 'Login successful', user });
+        } else {
+            // Authentication failed
+            res.status(401).json({ message: 'Invalid credentials' });
+        }
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 
 // Start server
 app.listen(PORT, () => {

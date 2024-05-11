@@ -13,7 +13,7 @@ function App() {
     <div>
     <SignupForm />
     {/* //<Splash />
-    //<LoginForm />
+    //< />
       //<AppDashboard />
         //<GetWeather /> */}
       </div>
