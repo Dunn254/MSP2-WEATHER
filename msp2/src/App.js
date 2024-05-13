@@ -1,23 +1,44 @@
-import React from 'react'
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Splash from './components/splash';
-import LoginForm from './components/login';
-import SignupForm from './components/signup';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
-
+import GetStocks from './components/StockApp/StockDisplay';
+import GetCurrency from './components/StockApp/ExchangeDisplay';
+import Navbar from './Navbar';
+import './NavBar.css'
+import GetStocksAggregate from './components/StockApp/StockChartDisplay';
 
 function App() {
+  let Component;
+  switch (window.location.pathname) {
+    case "/":
+      Component = AppDashboard;
+      break;
+    case "/Weather":
+      Component = GetWeather;
+      break;
+    // case "/News":
+    //   Component = News;
+    //   break;
+    case "/Stocks":
+      Component = () => (
+        <React.Fragment>
+          <GetStocks />
+          <GetStocksAggregate />
+        </React.Fragment>
+      );
+      break;
+    case "/Exchange":
+      Component = GetCurrency;
+      break;
+    default:
+      Component = AppDashboard; // Default component to render
+  }
+
   return (
     <div>
-    {/* //<Splash />
-    //<LoginForm />
-    //<SignupForm /> */}
-      <AppDashboard />
-      <div>
-        <GetWeather />
-      </div>
+      <Navbar />
+      <Component />
     </div>
   );
 }
