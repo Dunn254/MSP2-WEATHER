@@ -53,7 +53,7 @@ function GetWeather() {
 
     return (
         <div>
-            <h2>Weather Data:</h2>
+            <h3>Check the Weather:</h3>
             <div className='searchBarContainer'>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div className='searchBarWrap'>
@@ -63,7 +63,7 @@ function GetWeather() {
                         <input
                             value={location}
                             type='text'
-                            placeholder='Enter a location'
+                            placeholder='Enter location'
                             onChange={(event) => setLocation(event.target.value)} />
                     </div>
                 </form>

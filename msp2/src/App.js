@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from './logo.svg';
+import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
 import './App.css';
+// import NavBar from './components/navBar';
 import Splash from './components/splash';
 import LoginForm from './components/login';
 import SignupForm from './components/signup';
@@ -11,12 +12,14 @@ import './components/WeatherApp/WeatherApp.css'
 
 function App() {
   return (
-    <div>
+    <div id='App'>
     {/* //<Splash />
     //<LoginForm />
     //<SignupForm /> */}
       <AppDashboard />
+
       <div id='weatherApp'>
+
         <GetWeather />
       </div>
     </div>
