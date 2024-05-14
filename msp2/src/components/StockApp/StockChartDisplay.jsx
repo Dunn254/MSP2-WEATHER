@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import 'chart.js/auto';
+import { Line } from 'react-chartjs-2';
 
 function GetStocksAggregate() {
     const [ticker, setTicker] = useState('');
@@ -7,6 +9,7 @@ function GetStocksAggregate() {
     const [error, setError] = useState(null);
     const [stockData, setStockData] = useState(null);
     const [isFetching, setIsFetching] = useState(false);
+    const [chartData, setChartData] = useState(null);
 
     useEffect(() => {
         async function fetchTickerData() {
@@ -17,7 +20,24 @@ function GetStocksAggregate() {
             try {
                 const response = await fetch(stockUrl);
                 const data = await response.json();
-                setStockData(data.results); // Update to set only the results array
+                if (data.results) {
+                    setStockData(data.results);
+                    const chartData = {
+                        labels: data.results.map(stock => new Date(stock.t).toLocaleDateString()),
+                        datasets: [
+                            {
+                                label: 'Closing Price',
+                                data: data.results.map(stock => stock.c),
+                                fill: false,
+                                borderColor: 'rgb(75, 192, 192)',
+                                tension: 0.1
+                            }
+                        ]
+                    };
+                    setChartData(chartData);
+                } else {
+                    setError("No data found");
+                }
             } catch (err) {
                 setError(err);
                 console.log(err);
@@ -29,8 +49,7 @@ function GetStocksAggregate() {
         if (ticker.trim() !== '' && isFetching) {
             fetchTickerData();
         }
-    }, [ticker, startDate, endDate, isFetching]); // Added startDate and endDate to the dependency array
-    
+    }, [ticker, startDate, endDate, isFetching]);
 
     const handleFetchTickerData = () => {
         setIsFetching(true);
@@ -45,33 +64,27 @@ function GetStocksAggregate() {
                     value={ticker}
                     type='text'
                     placeholder='Enter a ticker symbol'
-                    onChange={(event) => setTicker(event.target.value)} // Corrected line
+                    onChange={(event) => setTicker(event.target.value)}
                 />
                 <input
                     value={startDate}
                     type='date'
-                    placeholder='Enter a start date'
-                    onChange={(event) => setStartDate(event.target.value)} // Corrected line
+                    onChange={(event) => setStartDate(event.target.value)}
                 />
                 <input
                     value={endDate}
                     type='date'
-                    placeholder='Enter an end date'
-                    onChange={(event) => setEndDate(event.target.value)} // Corrected line
+                    onChange={(event) => setEndDate(event.target.value)}
                 />
                 <button type='submit' onClick={handleFetchTickerData} disabled={!ticker.trim()}>
                         {isFetching ? 'Fetching...' : 'Get Stock Price History'}
                 </button>
             </form>
-            <div className='tickerData'>
-                {stockData && stockData.map((stock, index) => (
-                    <div key={index}>
-                        <p>Date: {new Date(stock.t).toLocaleDateString()}</p>
-                        <p>Closing Price: {stock.c}</p>
-                    </div>
-                ))}
-                {error && <p>Error fetching data: {error.message}</p>}
-            </div>
+            {chartData && (
+                <div className='chart-container'>
+                    <Line data={chartData} />
+                </div>
+            )}
         </div>
     );
 }
