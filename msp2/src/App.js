@@ -6,6 +6,7 @@ import LoginForm from './components/login';
 import SignupForm from './components/signup';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
+import './components/WeatherApp/WeatherApp.css'
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     //<LoginForm />
     //<SignupForm /> */}
       <AppDashboard />
-      <div>
+      <div id='weatherApp'>
         <GetWeather />
       </div>
     </div>
