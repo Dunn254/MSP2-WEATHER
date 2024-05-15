@@ -7,6 +7,7 @@ import GetCurrency from './components/StockApp/ExchangeDisplay';
 import Navbar from './Navbar';
 import './NavBar.css'
 import GetStocksAggregate from './components/StockApp/StockChartDisplay';
+import './components/WeatherApp/WeatherApp.css'
 
 function App() {
   let Component;
@@ -36,9 +37,16 @@ function App() {
   }
 
   return (
-    <div>
+ 
       <Navbar />
       <Component />
+    {/* //<Splash />
+    //<LoginForm />
+    //<SignupForm /> */}
+      <AppDashboard />
+      <div id='weatherApp'>
+        <GetWeather />
+      </div>
     </div>
   );
 }

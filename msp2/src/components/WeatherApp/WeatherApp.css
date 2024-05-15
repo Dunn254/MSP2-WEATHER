@@ -1,8 +1,63 @@
 .weatherData {
-    width: 500px;
-    height: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-/* .container {
-    background-color:  ;
-} */
+#weatherApp {
+    background-color: #817fa0;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px 0px 30px 0px;
+    /* margin: 10px; */
+    height: 80vh;
+    width: 80vh;
+}
+
+.searchBarContainer {
+    padding-top: 5vh;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.searchBarWrap {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.searchBarBtn {
+    background-color: transparent;
+    border: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#searchIcon {
+    color: royalblue;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
