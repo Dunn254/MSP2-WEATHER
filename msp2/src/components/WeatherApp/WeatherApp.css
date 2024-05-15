@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --section-overlay: rgba(0, 0, 0 ,0.7);
     --background-overlay: rbga(0, 0, 0, 0.2);
@@ -12,6 +13,23 @@
 .app {
     width: 90vh;
     height: 90vh;
+=======
+.weatherData {
+
+    width: 500px;
+    height: 600px;
+}
+
+/* .container {
+    background-color:  ;
+} */
+
+  
+
+
+#weatherApp {
+    background-color: #817fa0;
+>>>>>>> main
     text-align: center;
     align-items: center;
     border-radius: 10px;
@@ -125,6 +143,13 @@ input:focus {
 }
 
 img {
+<<<<<<< HEAD
     width: 6rem;
     height: 6rem;
 }
+=======
+    width: 150px;
+    height: 150px;
+}
+
+>>>>>>> main
