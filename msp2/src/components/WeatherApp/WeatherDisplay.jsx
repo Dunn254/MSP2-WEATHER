@@ -1,6 +1,7 @@
 import './WeatherApp.css'
 import React, { useState, useEffect } from 'react'
 import Sun from './Assets/sunny_icon.png'
+import Horizon from './Assets/horizon.jpg'
 import { FaSearch } from 'react-icons/fa'
 
 function GetWeather() {
@@ -52,38 +53,42 @@ function GetWeather() {
     }
 
     return (
-        <div>
-            <h3>Check the Weather:</h3>
+        <div className='app' style={{backgroundImage: `url(${Horizon})`}}>
+            <div className='container'>
             <div className='searchBarContainer'>
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <div className='searchBarWrap'>
+                    <div className='searchInputs'>
                         <button className='searchBarBtn' type='submit' onClick={handleFetchWeather} disabled={!location.trim()}>
                             {isFetching ? 'Fetching...' : <FaSearch id='searchIcon' />}
                         </button>
                         <input
                             value={location}
                             type='text'
-                            placeholder='Enter location'
+                            placeholder='Enter city'
                             onChange={(event) => setLocation(event.target.value)} />
                     </div>
                 </form>
             </div>
             <div className='weatherData'>
                 {weatherData && (
-                    <div>
+                    <div className='weatherDataDisplay'>
                         <div className='icon'>
-                        <p>Location: {weatherData.location.name}</p>
-                        <img src={Sun} alt='sunny' />
+                            <h4>{weatherData.location.name}, {weatherData.location.region}</h4>
+                            <img src={Sun} alt='sunny' />
+                            <h4>Condition: {weatherData.current.condition.text}</h4>
                         </div>
-                        <p>Condition: {weatherData.current.condition.text}</p>
-                        <p>Temperature: {weatherData.current.temp_f}°F</p>
-                        <p>Feels like: {weatherData.current.feelslike_f}°F</p>
-                        <p>Humidity: {weatherData.current.humidity}</p>
-                        <p>Wind mph: {weatherData.current.wind_mph} mph</p>
+                        <div className='temperature'>
+                            <h4>Temperature: {weatherData.current.temp_f}°F</h4>
+                            </div>
+                            {/* <p>Feels like: {weatherData.current.feelslike_f}°F</p>
+                            <p>Humidity: {weatherData.current.humidity}</p>
+                            <p>Wind mph: {weatherData.current.wind_mph} mph</p> */}
                     </div>
+                    
                 )}
                 {error && <p>Error fetching data {error.message}</p>}
             </div>
+        </div>
         </div>
     )
 

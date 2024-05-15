@@ -13,13 +13,12 @@ import './components/WeatherApp/WeatherApp.css'
 function App() {
   return (
     <div id='App'>
-    {/* //<Splash />
+      {/* //<Splash />
     //<LoginForm />
     //<SignupForm /> */}
       <AppDashboard />
 
       <div id='weatherApp'>
-
         <GetWeather />
       </div>
     </div>
