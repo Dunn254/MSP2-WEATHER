@@ -11,6 +11,8 @@ import GetStocksAggregate from './components/StockApp/StockChartDisplay';
 import './components/WeatherApp/WeatherApp.css'
 
 
+import NewsList from './components/NewsList'
+
 function App() {
   let Component;
   switch (window.location.pathname) {
@@ -57,9 +59,16 @@ function App() {
       <div id='weatherApp'>
         <GetWeather />
       </div>
+      <div className="app">
+      <NewsList />
+    </div>
     </div>
 
   );
+    
+  
 }
 
 export default App;
+
+
