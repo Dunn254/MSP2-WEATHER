@@ -41,6 +41,9 @@ function App() {
   }
 
   return (
+<<<<<<< HEAD
+ <div>
+=======
 
     <div>
     <SignupForm />
@@ -50,6 +53,7 @@ function App() {
       
 
  
+>>>>>>> main
       <Navbar />
       <Component />
     {/* //<Splash />
