@@ -1,4 +1,9 @@
+
+import React from 'react'
+import logo from './logo.svg';
+
 import React from 'react';
+
 import './App.css';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
@@ -8,6 +13,7 @@ import Navbar from './Navbar';
 import './NavBar.css'
 import GetStocksAggregate from './components/StockApp/StockChartDisplay';
 import './components/WeatherApp/WeatherApp.css'
+
 
 function App() {
   let Component;
@@ -37,6 +43,15 @@ function App() {
   }
 
   return (
+
+    <div>
+    <SignupForm />
+    {/* //<Splash />
+    //< />
+      //<AppDashboard />
+        //<GetWeather /> */}
+      </div>
+
  
       <Navbar />
       <Component />
@@ -48,6 +63,7 @@ function App() {
         <GetWeather />
       </div>
     </div>
+
   );
 }
 

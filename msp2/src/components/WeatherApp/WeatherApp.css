@@ -1,4 +1,13 @@
 .weatherData {
+
+    width: 500px;
+    height: 600px;
+}
+
+/* .container {
+    background-color:  ;
+} */
+
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -61,3 +70,4 @@ img {
     width: 150px;
     height: 150px;
 }
+
