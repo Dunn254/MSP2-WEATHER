@@ -1,9 +1,5 @@
-
+import SignupForm from './components/signup';
 import React from 'react'
-import logo from './logo.svg';
-
-import React from 'react';
-
 import './App.css';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
@@ -47,10 +43,9 @@ function App() {
     <div>
     <SignupForm />
     {/* //<Splash />
-    //< />
       //<AppDashboard />
         //<GetWeather /> */}
-      </div>
+      
 
  
       <Navbar />
