@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
 import './App.css';
-// import NavBar from './components/navBar';
 import Splash from './components/splash';
 import LoginForm from './components/login';
 import SignupForm from './components/signup';
@@ -12,7 +11,7 @@ import './components/WeatherApp/WeatherApp.css'
 
 function App() {
   return (
-    <div id='App'>
+    <div>
       {/* //<Splash />
     //<LoginForm />
     //<SignupForm /> */}
