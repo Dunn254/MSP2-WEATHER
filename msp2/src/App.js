@@ -1,4 +1,5 @@
-import React from 'react';
+import SignupForm from './components/signup';
+import React from 'react'
 import './App.css';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
@@ -8,6 +9,9 @@ import Navbar from './Navbar';
 import './NavBar.css'
 import GetStocksAggregate from './components/StockApp/StockChartDisplay';
 import './components/WeatherApp/WeatherApp.css'
+
+
+import NewsList from './components/NewsList'
 
 function App() {
   let Component;
@@ -37,7 +41,19 @@ function App() {
   }
 
   return (
+<<<<<<< HEAD
  <div>
+=======
+
+    <div>
+    <SignupForm />
+    {/* //<Splash />
+      //<AppDashboard />
+        //<GetWeather /> */}
+      
+
+ 
+>>>>>>> main
       <Navbar />
       <Component />
     {/* //<Splash />
@@ -47,8 +63,16 @@ function App() {
       <div id='weatherApp'>
         <GetWeather />
       </div>
+      <div className="app">
+      <NewsList />
     </div>
+    </div>
+
   );
+    
+  
 }
 
 export default App;
+
+

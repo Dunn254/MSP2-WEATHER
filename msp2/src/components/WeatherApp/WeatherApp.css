@@ -1,7 +1,15 @@
 .weatherData {
-    padding-top: 30px;
-    padding-bottom: 30px;
+
+    width: 500px;
+    height: 600px;
 }
+
+/* .container {
+    background-color:  ;
+} */
+
+  
+
 
 #weatherApp {
     background-color: #817fa0;
@@ -61,3 +69,4 @@ img {
     width: 150px;
     height: 150px;
 }
+
