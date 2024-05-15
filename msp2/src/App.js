@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
- 
+ <div>
       <Navbar />
       <Component />
     {/* //<Splash />
