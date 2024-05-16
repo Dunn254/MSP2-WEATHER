@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import React from 'react'
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
 import './App.css';
 import Splash from './components/splash';
 import LoginForm from './components/login';
-=======
->>>>>>> main
 import SignupForm from './components/signup';
-import React from 'react'
-import './App.css';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
 import GetStocks from './components/StockApp/StockDisplay';
@@ -49,12 +43,8 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
- <div>
-=======
 
     <div>
-<<<<<<< HEAD
       {/* //<Splash />
 =======
     <SignupForm />
@@ -64,18 +54,16 @@ function App() {
       
 
  
->>>>>>> main
       <Navbar />
       <Component />
     {/* //<Splash />
->>>>>>> main
     //<LoginForm />
     //<SignupForm /> */}
       <AppDashboard />
 
-      <div id='weatherApp'>
+      {/* <div id='weatherApp'>
         <GetWeather />
-      </div>
+      </div> */}
       <div className="app">
       <NewsList />
     </div>

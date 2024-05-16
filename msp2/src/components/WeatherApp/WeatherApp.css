@@ -1,39 +1,15 @@
-<<<<<<< HEAD
 :root {
     --section-overlay: rgba(0, 0, 0 ,0.7);
     --background-overlay: rbga(0, 0, 0, 0.2);
 }
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-.app {
-    width: 90vh;
-    height: 90vh;
-=======
-.weatherData {
-
-    width: 500px;
-    height: 600px;
-}
-
-/* .container {
-    background-color:  ;
-} */
-
-  
-
-
-#weatherApp {
-    background-color: #817fa0;
->>>>>>> main
+.weatherApp {
+    height: 80vh;
     text-align: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     padding: 2vw;
+    width: 90vw;
     /* margin: 10px; */
     /* height: 80vh;
     width: 80vw; */
@@ -47,12 +23,61 @@
 .container {
     max-width: 800px;
     margin: auto;
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     padding: 1rem;
+}
+
+h3 {
+    color: white;
+}
+
+.searchBarContainer {
+    width: 65%;
+    margin: auto;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchBar {
+    background-color: var(--section-overlay);
+    width: 100%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 1vw;
+    /* box-shadow: 0px 0px 8px #ddd; */
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.searchBarBtn {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+    flex: 1;
+}
+
+#searchIcon {
+    color: royalblue;
 }
 
 .weatherData {
@@ -67,9 +92,10 @@
     border-radius: 0.4rem;
     background-color: var(--section-overlay);
     width: 90%;
+    /* height: 20%; */
 }
 
-.searchInputs, .weatherDataDisplay {
+.searchBar, .weatherDataDisplay {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,79 +103,17 @@
 
 .weatherDataDisplay {
     width: 90%;
+    /* height: 100%; */
     padding: 1rem;
     border-radius: 0.4rem;
     color: white;
 }
 
-/* #weatherApp {
-    text-align: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: 2vw;
-    margin: 10px;
-    height: 80vh;
-    width: 80vw;
-    max-width: 400px;
-    margin: 0 auto;
-    overflow: hidden;
+/* .icon {
+    display: flex;
 } */
 
-.searchBarContainer {
-    /* padding-top: 1vh; */
-    width: 90%;
-    /* max-width: 600px; */
-    margin: auto;
-    margin-top: 1rem;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    /* min-width: 200px; */
-}
-
-.searchInputs {
-    background-color: white;
-    width: 100%;
-    border-radius: 10px;
-    height: 2.5rem;
-    padding: 0 1vw;
-    box-shadow: 0px 0px 8px #ddd;
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-}
-
-.searchBarBtn {
-    background-color: transparent;
-    border: none;
-}
-
-input {
-    background-color: transparent;
-    border: none;
-    height: 100%;
-    font-size: 1.25rem;
-    width: 100%;
-    margin-left: 5px;
-    flex: 1;
-}
-
-input:focus {
-    outline: none;
-}
-
-#searchIcon {
-    color: royalblue;
-}
-
 img {
-<<<<<<< HEAD
     width: 6rem;
     height: 6rem;
 }
-=======
-    width: 150px;
-    height: 150px;
-}
-
->>>>>>> main
