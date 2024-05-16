@@ -1,26 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import logo from '../logo.svg'; // Ensure you have the correct path to your logo
 
 function Splash() {
-    return(
-        <h1>Welcome!!</h1>
-    //     <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //     WTForecast?!!
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Get Started
-    //     </a>
-    //   </header>
-    // </div>
+    const navigate = useNavigate();
+
+    const handleGetStartedClick = () => {
+        navigate('/login');
+    };
+
+    return (
+        <div className="App container-fluid bg-dark">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h1>Welcome!!</h1>
+                <p>WTForecast?!!</p>
+                <button className="App-link btn-primary border text-light" onClick={handleGetStartedClick}>
+                    Get Started
+                </button>
+            </header>
+        </div>
     );
 }
-
 
 export default Splash;

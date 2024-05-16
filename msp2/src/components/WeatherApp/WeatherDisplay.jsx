@@ -57,7 +57,7 @@ function WeatherDisplay() {
 
 
 <div>
-            <h2>Weather Data:</h2>
+            <h2 className='text-center'>Weather Data:</h2>
             <div className='searchBarContainer'>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div className='searchBarWrap'>

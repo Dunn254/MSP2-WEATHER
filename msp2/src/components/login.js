@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ setLoggedIn }) => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -30,6 +32,7 @@ const LoginForm = ({ setLoggedIn }) => {
                 alert(data.message); // Display success message
                 setLoggedIn(true); // Update login state
                 // Redirect user to dashboard or other protected route
+                navigate('/dashboard');
             } else {
                 throw new Error('Login failed');
             }
@@ -39,8 +42,12 @@ const LoginForm = ({ setLoggedIn }) => {
         }
     };
 
+    const handleSignupClick = () => {
+        navigate('/signup'); // Navigate to signup component
+    };
+
     return (
-        <div className="container">
+        <div className="container text-dark">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -55,11 +62,11 @@ const LoginForm = ({ setLoggedIn }) => {
                         required
                     />
                 </div>
-                <div className="form-group">
+                <div className="form-group mb-2">
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
-                        className="form-control"
+                        className="form-control mb-2"
                         id="password"
                         name="password"
                         value={formData.password}
@@ -67,8 +74,11 @@ const LoginForm = ({ setLoggedIn }) => {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary btn-block">Login</button>
             </form>
+            <div className="mt-3">
+                <button className="btn btn-block btn-secondary" onClick={handleSignupClick}>Signup</button>
+            </div>
         </div>
     );
 };
