@@ -21,10 +21,10 @@ function WeatherDisplay() {
  
              // create fetch url with API key
              const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-             const url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`
+             const weatherUrl = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`
              // Fetch weather data
              try {
-                 const response = await fetch(url, options)
+                 const response = await fetch(weatherUrl, options)
                  const data = await response.json()
                  setWeatherData(data)
                  console.log(data)
@@ -53,10 +53,8 @@ function WeatherDisplay() {
      }
  
   return (
-    <div>
-
-
-<div>
+    <div id='weatherApp'>
+        <div>
             <h2>Weather Data:</h2>
             <div className='searchBarContainer'>
                 <form onSubmit={(e) => e.preventDefault()}>

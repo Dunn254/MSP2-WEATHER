@@ -37,7 +37,7 @@ function GetCurrency() {
 
     return (
         <div className='container'>
-            <h2>Search Exchange rates:</h2>
+            <h1>Get Exchange rates:</h1>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
                     value={currency1}
@@ -52,7 +52,7 @@ function GetCurrency() {
                     onChange={(event) => setCurrency2(event.target.value)} // Fixed event handler
                 />
                 <button type='submit' onClick={handleFetchCurrencyData} disabled={!currency1.trim() || !currency2.trim()}> {/* Changed variable names */}
-                    {isFetching ? 'Fetching...' : 'Get Exchange Rate'}
+                    {isFetching ? 'Fetching...' : 'Click Here!'}
                 </button>
             </form>
             <div className='ExchangeRateData'>

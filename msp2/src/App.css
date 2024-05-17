@@ -2,37 +2,72 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-shadow: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  color: darkblue;
+  padding-top: 5rem;
+  font-size: 2rem;
+  font-family: Urbanist;
+}
+
+h2 {
+  color: darkblue;
+  padding-top: 5rem;
+  padding-left: 5rem;
+  font-size: 2rem;
+  font-family: Urbanist;
+}
+
+.container {
+  color: rgb(25, 43, 43);
+  font-family: Urbanist;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p, div {
+  color: rgb(25, 43, 43);
+  font-family: Urbanist;
+}
+
+.news-app {
+  padding-top: 5rem;
+  padding-left: 5rem;
+}
+
+.nav {
+  color: darkblue;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2rem;
+  padding: 0 1.2rem;
+  font-family: Quattrocento;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  font-size: 2rem;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
 }
