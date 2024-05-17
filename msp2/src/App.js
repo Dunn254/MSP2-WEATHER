@@ -1,11 +1,6 @@
 import React from 'react'
 import './App.css';
-<<<<<<< HEAD
 import Navbar from './Navbar';
-=======
-import Splash from './components/splash';
-import LoginForm from './components/login';
->>>>>>> 1a01a21 (created widgets component)
 import SignupForm from './components/signup';
 import AppDashboard from './components/dashboard';
 import GetWeather from './components/WeatherApp/WeatherDisplay';
@@ -36,10 +31,9 @@ function App() {
     case "/Weather":
       Component = GetWeather;
       break;
-    // case "/News":
-    //   Component = News;
-    //   break;
-    //test
+    case "/News":
+      Component = NewsList;
+      break;
     case "/Stocks":
       Component = () => (
         <React.Fragment>
@@ -56,35 +50,9 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
     <div className="h-screen w-screen" style={style}>
       <Navbar />
       <Component />
-=======
-
-    <div>
-      {/* //<Splash />
-=======
-    <SignupForm />
-    {/* //<Splash />
-      //<AppDashboard />
-        //<GetWeather /> */}
-      
-
- 
-      <Navbar />
-      <Component />
-    {/* //<Splash />
-    //<LoginForm />
-    //<SignupForm /> */}
-      <AppDashboard />
-
-      {/* <div id='weatherApp'>
-        <GetWeather />
-      </div> */}
-      <div className="app">
-      <NewsList />
->>>>>>> 1a01a21 (created widgets component)
     </div>
   );
 
