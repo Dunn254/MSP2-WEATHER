@@ -9,4 +9,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a01a21 (created widgets component)
