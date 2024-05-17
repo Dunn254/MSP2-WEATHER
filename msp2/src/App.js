@@ -53,27 +53,9 @@ function App() {
 
   return (
  <div>
-
     <div>
-    <SignupForm />
-    {/* //<Splash />
-      //<AppDashboard />
-        //<GetWeather /> */}
-      
-
- 
       <Navbar />
       <Component />
-    {/* //<Splash />
-    //<LoginForm />
-    //<SignupForm /> */}
-      <AppDashboard />
-      <div id='weatherApp'>
-        <GetWeather />
-      </div>
-      <div className="app">
-      <NewsList />
-    </div>
     </div>
 </div>
   );
