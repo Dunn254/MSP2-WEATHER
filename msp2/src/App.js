@@ -32,16 +32,10 @@ function App() {
     case "/Weather":
       Component = GetWeather;
       break;
-<<<<<<< HEAD
-    case "/News":
-      Component = NewsList;  
-      break;
-=======
     // case "/News":
     //   Component = News;
     //   break;
     //test
->>>>>>> Validate-login/signup
     case "/Stocks":
       Component = () => (
         <React.Fragment>
@@ -58,12 +52,6 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="h-screen w-screen" style={style}>
-    <Navbar />
-    <Component />
-    </div>
-=======
  <div>
 
     <div>
@@ -88,7 +76,6 @@ function App() {
     </div>
     </div>
 </div>
->>>>>>> Validate-login/signup
   );
     
   
