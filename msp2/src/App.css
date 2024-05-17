@@ -2,7 +2,6 @@
   background-color: beige;
 }
 
-<<<<<<< HEAD
 * {
   box-shadow: border-box;
 }
@@ -71,7 +70,6 @@ nav a {
   color: inherit;
   text-decoration: none;
   font-size: 1rem;
-=======
 ul {
   display: flex;
   flex-direction: row;
@@ -81,5 +79,4 @@ ul {
 
 li {
   text-decoration: none;
->>>>>>> 44964e2 (made weather app responsive)
 }
