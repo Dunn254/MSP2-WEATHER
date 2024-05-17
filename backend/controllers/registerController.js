@@ -1,9 +1,19 @@
 const User = require('../models/users');
 
 exports.signup = async (req, res) => {
-    const userData = req.body;
+    const { username, email, ...otherData } = req.body;
+
     try {
-        const newUser = new User(userData);
+        // Check if username or email already exists
+        const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+        
+        if (existingUser) {
+            // If user exists, send an error response
+            return res.status(400).json({ error: 'Username or email already exists' });
+        }
+
+        // If user does not exist, create a new user
+        const newUser = new User({ username, email, ...otherData });
         await newUser.save();
         res.status(201).json({ message: 'User signed up successfully' });
     } catch (error) {

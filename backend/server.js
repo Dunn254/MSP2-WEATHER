@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const registerController = require('./controllers/registerController');
+const cors = require('cors');
+
+
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -26,27 +29,12 @@ mongoose.connect(MONGO_URI, {
 app.use(express.json());
 
 // Signup route
+const registerController = require('./controllers/registerController');
 app.post('/signup', registerController.signup);
 
 // Login route
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-
-    try {
-        const user = await loginUser(username, password);
-
-        if (user) {
-            // Authentication successful
-            res.status(200).json({ message: 'Login successful', user });
-        } else {
-            // Authentication failed
-            res.status(401).json({ message: 'Invalid credentials' });
-        }
-    } catch (error) {
-        console.error('Login error:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
+const loginController = require('./controllers/loginController');
+app.post('/login', loginController.loginUser);
 
 // Start server
 app.listen(PORT, () => {
