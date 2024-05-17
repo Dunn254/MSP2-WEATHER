@@ -3,3 +3,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
+
+.subWidgetIcons {
+    color: white;
+}
+
+/* h3 {
+    color: white;
+} */
+

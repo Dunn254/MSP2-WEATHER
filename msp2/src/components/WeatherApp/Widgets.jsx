@@ -9,31 +9,31 @@ const Widgets = ({ humidity, wind_mph }) => {
             <div className='subWidgets'>
                 <div className='subWidgetIcons'>
                     <WiHumidity />
-                    <small>humidity</small>
-                    <h2>{humidity}%</h2>
+                    <h3>humidity</h3>
+                    <h3>{humidity}%</h3>
                     <FaWind />
-                    <small>wind</small>
-                    <h2>{wind_mph}mph</h2>
+                    <h3>wind</h3>
+                    <h3>{wind_mph}mph</h3>
                 </div>
             </div>
             <div className='subWidgets'>
                 <div className='subWidgetIcons'>
                     <WiHumidity />
-                    <small>humidity</small>
-                    <h2>{humidity}%</h2>
+                    <h3>humidity</h3>
+                    <h3>{humidity}%</h3>
                     <FaWind />
-                    <small>wind</small>
-                    <h2>{wind_mph}mph</h2>
+                    <h3>wind</h3>
+                    <h3>{wind_mph}mph</h3>
                 </div>
             </div>
             <div className='subWidgets'>
                 <div className='subWidgetIcons'>
                     <WiHumidity />
-                    <small>humidity</small>
-                    <h2>{humidity}%</h2>
+                    <h3>humidity</h3>
+                    <h3>{humidity}%</h3>
                     <FaWind />
-                    <small>wind</small>
-                    <h2>{wind_mph}mph</h2>
+                    <h3>wind</h3>
+                    <h3>{wind_mph}mph</h3>
                 </div>
             </div>
         </div>
