@@ -25,6 +25,7 @@ function App() {
     // case "/News":
     //   Component = News;
     //   break;
+    //test
     case "/Stocks":
       Component = () => (
         <React.Fragment>
@@ -41,9 +42,7 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
  <div>
-=======
 
     <div>
     <SignupForm />
@@ -53,7 +52,6 @@ function App() {
       
 
  
->>>>>>> main
       <Navbar />
       <Component />
     {/* //<Splash />
@@ -67,7 +65,7 @@ function App() {
       <NewsList />
     </div>
     </div>
-
+</div>
   );
     
   
