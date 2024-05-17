@@ -57,8 +57,9 @@ const WeatherDisplay = () => {
     }
 
     return (
-        <div className='weatherApp' style={{ backgroundImage: `url(${clearSky})` }}>
-            <div className='container'>
+        <div className='weatherApp'>
+            {/* style={{ backgroundImage: `url(${clearSky})` } */}
+            <div className='container2'>
                 <h3>Check the weather:</h3>
                 <div className='searchBarContainer'>
                     <form onSubmit={(e) => e.preventDefault()}>
@@ -79,9 +80,9 @@ const WeatherDisplay = () => {
                         <div>
                         <div className='weatherDataDisplay'>
                             <div className='icon'>
-                                <h5>{weatherData.location.name}, {weatherData.location.region}</h5>
+                                <h3>{weatherData.location.name}, {weatherData.location.region}</h3>
                                 <img src={Sun} alt='sunny' />
-                                <h5>{weatherData.current.condition.text}</h5>
+                                <h3>{weatherData.current.condition.text}</h3>
                             </div>
                             <div className='temperature'>
                                 <h3>{weatherData.current.temp_f}°F</h3>

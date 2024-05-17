@@ -26,7 +26,7 @@
 
 
 .weatherApp {
-    height: 80vh;
+    height: 100vh;
     text-align: center;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
@@ -42,10 +42,10 @@
     background-size: cover;
 }
 
-.container {
+.container2 {
     max-width: 800px;
     margin: auto;
-    height: 80%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,6 +54,10 @@
 }
 
 h3 {
+    color: white;
+}
+
+h5 {
     color: white;
 }
 
@@ -138,4 +142,5 @@ input {
 img {
     width: 6rem;
     height: 6rem;
+    margin: 0 auto;
 }
