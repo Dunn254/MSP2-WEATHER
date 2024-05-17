@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css';
-import './components/WeatherApp/WeatherApp.css'
 import Navbar from './Navbar';
 import SignupForm from './components/signup';
 import AppDashboard from './components/dashboard';
@@ -52,15 +51,13 @@ function App() {
   }
 
   return (
- <div>
-    <div>
+    <div className="h-screen w-screen" style={style}>
       <Navbar />
       <Component />
     </div>
-</div>
   );
-    
-  
+
+
 }
 
 export default App;
