@@ -36,7 +36,7 @@ function GetStocks() {
 
     return (
         <div className='container'>
-            <h2>Stock Closing Price:</h2>
+            <h1>Get Stock Closing Price:</h1>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
                     value={ticker}
@@ -45,7 +45,7 @@ function GetStocks() {
                     onChange={(event) => setTicker(event.target.value)}
                 />
                 <button type='submit' onClick={handleFetchTickerData} disabled={!ticker.trim()}>
-                    {isFetching ? 'Fetching...' : 'Get Stock Price'}
+                    {isFetching ? 'Fetching...' : 'Click Here!'}
                 </button>
             </form>
             <div className='tickerData'>

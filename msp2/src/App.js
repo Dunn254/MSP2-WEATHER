@@ -1,50 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import SignupForm from './components/signup';
-import LoginForm from './components/login';
-import AppDashboard from './components/dashboard';
-import Navbar from './Navbar';
-import Splash from './components/splash';
+import React from 'react'
 import './App.css';
-import './NavBar.css';
-import './components/WeatherApp/WeatherApp.css';
+import './components/WeatherApp/WeatherApp.css'
+import Navbar from './Navbar';
+import SignupForm from './components/signup';
+import AppDashboard from './components/dashboard';
+import GetWeather from './components/WeatherApp/WeatherDisplay';
+import GetStocks from './components/StockApp/StockDisplay';
+import GetCurrency from './components/StockApp/ExchangeDisplay';
+import GetStocksAggregate from './components/StockApp/StockChartDisplay';
+import background from './images/pexels-dreamypixel-547114.jpg';
+import NewsList from './components/NewsList';
+import LoginForm from './components/login';
 
 function App() {
-    const [currentView, setCurrentView] = useState('splash');
-    const [loggedIn, setLoggedIn] = useState(false);
 
-    useEffect(() => {
-        // Show splash screen for 10 seconds
-        const timer = setTimeout(() => {
-            setCurrentView('login');
-        }, 10000);
+  const style = {
+    backgroundImage: `url(${background})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center"
+  }
 
-        // Cleanup the timer on component unmount
-        return () => clearTimeout(timer);
-    }, []);
+  let Component;
+  switch (window.location.pathname) {
+    case "/":
+      Component = AppDashboard;
+      break;
+    case "/Signup":
+      Component = SignupForm;
+      break;
+    case "/Weather":
+      Component = GetWeather;
+      break;
+    case "/News":
+      Component = NewsList;  
+      break;
+    case "/Stocks":
+      Component = () => (
+        <React.Fragment>
+          <GetStocks />
+          <GetStocksAggregate />
+        </React.Fragment>
+      );
+      break;
+    case "/Exchange":
+      Component = GetCurrency;
+      break;
+    default:
+      Component = AppDashboard; // Default component to render
+  }
 
-    useEffect(() => {
-        if (loggedIn) {
-            setCurrentView('dashboard');
-        }
-    }, [loggedIn]);
-
-    return (
-        <Router>
-            {currentView === 'splash' && <Splash />}
-            {currentView !== 'splash' && (
-                <>
-                    {currentView === 'dashboard' && <Navbar />}
-                    <Routes>
-                        <Route path="/" element={loggedIn ? <AppDashboard /> : <Navigate to="/login" />} />
-                        <Route path="/login" element={<LoginForm setLoggedIn={setLoggedIn} />} />
-                        <Route path="/signup" element={<SignupForm />} />
-                        <Route path="*" element={<Navigate to="/" />} />
-                    </Routes>
-                </>
-            )}
-        </Router>
-    );
+  return (
+    <div className="h-screen w-screen" style={style}>
+    <Navbar />
+    <Component />
+    </div>
+  );
+    
+  
 }
 
 export default App;
+
+

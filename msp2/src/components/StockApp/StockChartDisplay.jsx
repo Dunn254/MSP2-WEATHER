@@ -29,7 +29,8 @@ function GetStocksAggregate() {
                                 label: 'Closing Price',
                                 data: data.results.map(stock => stock.c),
                                 fill: false,
-                                borderColor: 'rgb(75, 192, 192)',
+                                borderColor: 'rgb(25, 43, 43)',
+                                backgroundColor: 'rgba(25, 43, 43, 0.5)', // Darker color with transparency
                                 tension: 0.1
                             }
                         ]
@@ -56,9 +57,29 @@ function GetStocksAggregate() {
         console.log('Fetching stock data...');
     };
 
+    const options = {
+        scales: {
+            x: {
+                ticks: { color: 'rgb(25, 43, 43)' }, // Darker tick color
+                grid: { color: 'rgb(25, 43, 43)' } // Darker grid color
+            },
+            y: {
+                ticks: { color: 'rgb(25, 43, 43)' }, // Darker tick color
+                grid: { color: 'rgb(25, 43, 43)' } // Darker grid color
+            }
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'rgb(25, 43, 43)' // Darker legend color
+                }
+            }
+        }
+    };
+
     return (
         <div className='container'>
-            <h2>Stock Price Trending History:</h2>
+            <h1>Get Stock Price History:</h1>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
                     value={ticker}
@@ -77,12 +98,12 @@ function GetStocksAggregate() {
                     onChange={(event) => setEndDate(event.target.value)}
                 />
                 <button type='submit' onClick={handleFetchTickerData} disabled={!ticker.trim()}>
-                        {isFetching ? 'Fetching...' : 'Get Stock Price History'}
+                        {isFetching ? 'Fetching...' : 'Click Here!'}
                 </button>
             </form>
             {chartData && (
                 <div className='chart-container'>
-                    <Line data={chartData} />
+                    <Line data={chartData} options={options} />
                 </div>
             )}
         </div>

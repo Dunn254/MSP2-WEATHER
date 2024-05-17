@@ -110,7 +110,7 @@ const stocks = [
 
     return (
         <div className="container">
-            <h2>Sign Up</h2>
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="username">Username</label>
@@ -210,28 +210,9 @@ const stocks = [
             </select>
         </div>
                 <div className="form-group">
-                    <label htmlFor="favoriteSport">Favorite Sport</label>
-                    <select
-                        className="form-control"
-                        id="favoriteSport"
-                        name="favoriteSport"
-                        value={formData.favoriteSport}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select Favorite Sport</option>
-                        {/* Add sport options dynamically */}
-                        {/* Example: <option value="football">Football</option> */}
-                        {sports.map((sport, index) => (
-                            <option key={index} value={sport}>
-                                {sport}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className="form-group mb-2">
                     <label htmlFor="favoriteStock">Favorite Stock</label>
-                    <select
+                    <input
+                        type="text"
                         className="form-control"
                         id="favoriteStock"
                         name="favoriteStock"
@@ -239,15 +220,7 @@ const stocks = [
                         onChange={handleChange}
                         required
                     >
-                        <option value="">Select Favorite Stock</option>
-                        {/* Add stock options dynamically */}
-                        {/* Example: <option value="AAPL">Apple Inc.</option> */}
-                        {stocks.map((stock, index) => (
-                            <option key={index} value={stock}>
-                                {stock}
-                            </option>
-                        ))}
-                    </select>
+                    </input>
                 </div>
                 <button type="submit" className="btn btn-primary">Sign Up</button>
             </form>
