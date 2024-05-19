@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './WeatherApp.css'
-import Sun from './Assets/sunny_icon.png'
-import clearSky from './Assets/clearSky.jpg'
-import clearSkyGif from './Assets/clearSky.gif'
-import Horizon from './Assets/horizon.jpg'
 import { FaSearch } from 'react-icons/fa'
 import Widgets from './Widgets'
 
@@ -25,7 +21,7 @@ const WeatherDisplay = () => {
 
             // create fetch url with API key
             const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-            const url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`
+            const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}`
             // Fetch weather data
             try {
                 const response = await fetch(url, options)
@@ -56,11 +52,11 @@ const WeatherDisplay = () => {
         console.log('Successfully grabbed weather data for a city ✅')
     }
 
+
     return (
         <div className='weatherApp'>
-            {/* style={{ backgroundImage: `url(${clearSky})` } */}
             <div className='container2'>
-                <h3>Check the weather:</h3>
+                {/* <h3>Check the weather:</h3> */}
                 <div className='searchBarContainer'>
                     <form onSubmit={(e) => e.preventDefault()}>
                         <div className='searchBar'>
@@ -70,7 +66,7 @@ const WeatherDisplay = () => {
                             <input
                                 value={location}
                                 type='text'
-                                placeholder='Enter city'
+                                placeholder='Enter a city'
                                 onChange={(event) => setLocation(event.target.value)} />
                         </div>
                     </form>
@@ -78,31 +74,34 @@ const WeatherDisplay = () => {
                 <div className='weatherData'>
                     {weatherData && (
                         <div>
-                        <div className='weatherDataDisplay'>
-                            <div className='icon'>
-                                <h3>{weatherData.location.name}, {weatherData.location.region}</h3>
-                                <img src={Sun} alt='sunny' />
-                                <h3>{weatherData.current.condition.text}</h3>
+                            <div className='weatherDataDisplay'>
+                                <div className='icon'>
+                                    <h3>{weatherData.location.name}, {weatherData.location.region}</h3>
+                                    <img src={weatherData.current.condition.icon}></img>
+                                    <h3>{weatherData.current.condition.text}</h3>
+                                </div>
+                                <div className='temperature'>
+                                    <h1>{weatherData.current.temp_f}°F</h1>
+                                </div>
                             </div>
-                            <div className='temperature'>
-                                <h3>{weatherData.current.temp_f}°F</h3>
-                            </div>
-                            {/* <p>Feels like: {weatherData.current.feelslike_f}°F</p>
-                            <p>Humidity: {weatherData.current.humidity}</p>
-                            <p>Wind mph: {weatherData.current.wind_mph} mph</p> */}
-                        </div>
                         </div>
                     )}
                     {error && <p>Error fetching data {error.message}</p>}
                 </div>
-                {/* <Widgets /> */}
             </div>
             {/* Pass fetched data into Widgets */}
-            {weatherData && (
-            <Widgets 
-            humidity={ weatherData.current.humidity }
-            wind_mph={ weatherData.current.wind_mph } />
-            )}
+            <div className='widgetData'>
+                {weatherData && (
+                    <Widgets
+                        humidity={weatherData.current.humidity}
+                        wind_mph={weatherData.current.wind_mph}
+                        daily_chance_of_rain={weatherData.forecast.daily_chance_of_rain}
+                        uv={weatherData.current.uv}
+                        precip={weatherData.current.precip_in}
+                    />
+                )}
+                {error && <p>Error fetching data {error.message}</p>}
+            </div>
         </div>
     )
 }

@@ -2,10 +2,39 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    /* max-width: 80vw;
+    margin: 0 auto; */
 }
 
+.subWidgets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--section-overlay);
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+
 .subWidgetIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
     color: white;
+}
+
+.subWidgetIcons>h3 {
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 1024px) {
+    .widgets {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* h3 {
