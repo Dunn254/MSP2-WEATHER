@@ -21,7 +21,7 @@ const WeatherDisplay = () => {
 
             // create fetch url with API key
             const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-            const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}`
+            const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}`
             // Fetch weather data
             try {
                 const response = await fetch(url, options)
