@@ -14,10 +14,12 @@ import LoginForm from './components/login';
 function App() {
 
   const style = {
+    minHeight: '100vh',
     backgroundImage: `url(${background})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
   }
 
   let Component;
@@ -50,7 +52,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen w-screen" style={style}>
+    <div className="w-screen" style={style}>
       <Navbar />
       <Component />
     </div>
