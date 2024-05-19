@@ -19,7 +19,7 @@ const SignupForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5001/signup', {
+            const response = await fetch('https://msp2-backend-2zas.onrender.com/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

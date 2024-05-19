@@ -49,7 +49,7 @@ export default function SignInSide({ setLoggedIn, formData}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5001/login', {
+            const response = await fetch('https://msp2-backend-2zas.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
