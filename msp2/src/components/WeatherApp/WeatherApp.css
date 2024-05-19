@@ -5,7 +5,7 @@
 
 .weatherApp {
     height: 100vh;
-    max-width: 80vw;
+    width: 80vw;
     text-align: center;
     align-items: center;
     border-radius: 0px 0px 10px 10px;

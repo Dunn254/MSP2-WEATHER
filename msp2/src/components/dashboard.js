@@ -30,11 +30,26 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function SignInSide() {
+// const LoginForm = ({ setLoggedIn }) => {
+//   const navigate = useNavigate();
+//   const [formData, setFormData] = useState({
+//       username: '',
+//       password: ''
+//   });
+//   const handleChange = (e) => {
+//       const { name, value } = e.target;
+//       setFormData({
+//           ...formData,
+//           [name]: value
+//       });
+//   };
+// }
+
+export default function SignInSide({ setLoggedIn, formData}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/login', {
+            const response = await fetch('http://localhost:5001/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
