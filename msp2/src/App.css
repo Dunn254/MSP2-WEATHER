@@ -28,6 +28,8 @@ h2 {
 .container {
   color: rgb(25, 43, 43);
   font-family: Urbanist;
+  padding-top: 8rem;
+  height: 30vh;
 }
 
 h3 {
